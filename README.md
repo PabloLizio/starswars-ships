@@ -42,13 +42,13 @@ Navigate to `http://localhost:4200/`.
   2. [ ] login no realiaza ningun llamado al servidor API para checkar el usario y constraseña
   3. [ ] La sesion no persiste al recargar la App
   4. [ ] El usuario puede acceder a cualquier pagina de la App sin haberse logueado
-  5. [ ] Mensajes de error (username is required) de input Username (login Form) es mostrado sin haber sido tocado ni modificado
-  6. [ ] Mensajes de error (password is required) de input Password (login Form) es mostrado sin haber sido tocado ni modificado
-  7. [ ] Mensajes de error (FirstName is required) de input FirstName (Rgister Form) es mostrado sin haber sido tocado ni modificado
-  8. [ ] Mensajes de error (LastName is required) de input LastName (Rgister Form) es mostrado sin haber sido tocado ni modificado
-  9. [ ] Mensajes de error (Username is required) de input Username (Rgister Form) es mostrado sin haber sido tocado ni modificado
-  10. [ ] Mensajes de error (email is required) de input email (Rgister Form) es mostrado sin haber sido tocado ni modificado
-  11. [ ] No hay un input field para ingresar el password del nuevo usuario
+  5. [x] Mensajes de error (username is required) de input Username (login Form) es mostrado sin haber sido tocado ni modificado
+  6. [x] Mensajes de error (password is required) de input Password (login Form) es mostrado sin haber sido tocado ni modificado
+  7. [x] Mensajes de error (FirstName is required) de input FirstName (Rgister Form) es mostrado sin haber sido tocado ni modificado
+  8. [x] Mensajes de error (LastName is required) de input LastName (Rgister Form) es mostrado sin haber sido tocado ni modificado
+  9. [x] Mensajes de error (Username is required) de input Username (Rgister Form) es mostrado sin haber sido tocado ni modificado
+  10. [x] Mensajes de error (email is required) de input email (Rgister Form) es mostrado sin haber sido tocado ni modificado
+  11. [x] No hay un input field para ingresar el password del nuevo usuario
   12. [ ] El registro del usuario no persiste al recargar la App
   13. [ ] No se muestran la imagenes de las naves en la pagina de listado de naves
   14. [ ] Paginacion no realiza carga de las subsequentes paginas de la API
