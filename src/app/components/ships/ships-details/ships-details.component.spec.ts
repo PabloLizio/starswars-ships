@@ -9,24 +9,11 @@ describe('ShipsDetailsComponent', () => {
   let component: ShipsDetailsComponent;
   let fixture: ComponentFixture<ShipsDetailsComponent>;
 
-  @Component({
-    selector: 'pagination-controls',
-    template: '<p>Mock Pagination controls Component</p>',
-  })
-  class MockPaginationControls {}
-  @Pipe({ name: 'paginate' })
-  class MockPipe implements PipeTransform {
-    transform(value: number): number {
-      //Do stuff here, if you want
-      return value;
-    }
-  }
-
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
         imports: [HttpClientModule],
-        declarations: [ShipsDetailsComponent, MockPaginationControls, MockPipe],
+        declarations: [ShipsDetailsComponent],
       }).compileComponents();
     })
   );
@@ -34,7 +21,11 @@ describe('ShipsDetailsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ShipsDetailsComponent);
     component = fixture.componentInstance;
-    component.dataList = {};
+    component.starship = {
+      model: 'CR90 corvette',
+      name: 'CR90 corvette',
+      url: 'http://swapi.dev/api/starships/2/',
+    };
     fixture.detectChanges();
   });
 
