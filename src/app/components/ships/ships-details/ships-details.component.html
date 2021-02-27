@@ -1,18 +1,10 @@
-<pagination-controls
-  (pageChange)="pageChanged($event)"
-  class="text-center"
-></pagination-controls>
-<div
-  class="ship"
-  *ngFor="let ships of dataList.results | paginate: config; let i = index"
-  (click)="openDetails(ships)"
->
+<div class="ship" (click)="openDetails(starship)">
   <div class="panel-heading">
-    <h3 class="panel-title">{{ ships.name }}</h3>
+    <h3 class="panel-title">{{ starship.name }}</h3>
   </div>
   <div class="panel-body text-center color">
     <img
-      [src]="getStarshipId(ships.url)"
+      [src]="getStarshipId(starship.url)"
       onError="this.src='assets/img/errorImg_x3.svg'"
       class="imgSize"
     />

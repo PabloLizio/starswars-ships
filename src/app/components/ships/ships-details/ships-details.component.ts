@@ -1,3 +1,4 @@
+import { Starship } from './../../../models/starship';
 import { Component, OnInit, Input } from '@angular/core';
 declare var $: any;
 
@@ -7,10 +8,8 @@ declare var $: any;
   styleUrls: ['./ships-details.component.scss'],
 })
 export class ShipsDetailsComponent implements OnInit {
-  @Input() dataList: any;
-  config: any;
-  shipId: string = '';
-  url: string = '';
+  @Input() starship: Starship;
+
   // Modal
   titleDetails: string = '';
   modelDetails: string = '';
@@ -18,22 +17,12 @@ export class ShipsDetailsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.config = {
-      itemsPerPage: 5,
-      currentPage: 1,
-      totalItems: this.dataList.length,
-    };
-  }
+  ngOnInit(): void {}
 
   getStarshipId(url: string) {
     //extraer el ship ID de la url ej: "http://swapi.dev/api/starships/15/" -> "15"
     const shipId = url.replace(/(.+)([0-9]+)(.+)/g, '$2');
     return `https://starwars-visualguide.com/assets/img/starships/${shipId}.jpg`;
-  }
-
-  pageChanged(event) {
-    this.config.currentPage = event;
   }
 
   openDetails(details) {

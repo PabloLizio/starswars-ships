@@ -1,3 +1,10 @@
 <div class="container">
-  <ships-details [dataList]="dataList"></ships-details>
+  <pagination-controls
+    (pageChange)="pageChanged($event)"
+    class="text-center"
+  ></pagination-controls>
+  <ships-details
+    *ngFor="let starship of dataList.results | paginate: config; let i = index"
+    [starship]="starship"
+  ></ships-details>
 </div>
