@@ -2,7 +2,7 @@
   <h2 class="text-center">Registrar</h2>
   <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
     <div class="form-group mt-5">
-      <!-- <label for="username">First name</label> -->
+      <!-- <label for="email">First name</label> -->
       <input
         type="text"
         name="first_name"
@@ -13,7 +13,10 @@
       <hr class="hr-line" />
       <div
         class="input-group-append form__required"
-        *ngIf="registerForm.get('first_name').invalid"
+        *ngIf="
+          registerForm.get('first_name').invalid &&
+          registerForm.get('first_name').touched
+        "
       >
         <span class="colorInvalid">
           <i>FirstName is required</i>
@@ -26,7 +29,7 @@
         'has-error': form.lastName.$dirty && form.lastName.$error.required
       }"
     >
-      <!-- <label for="username">Last name</label> -->
+      <!-- <label for="email">Last name</label> -->
       <input
         type="text"
         name="last_name"
@@ -37,7 +40,10 @@
       <hr class="hr-line" />
       <div
         class="input-group-append form__required"
-        *ngIf="registerForm.get('last_name').invalid"
+        *ngIf="
+          registerForm.get('last_name').invalid &&
+          registerForm.get('last_name').touched
+        "
       >
         <span class="colorInvalid">
           <i>LastName is required</i>
@@ -47,24 +53,27 @@
     <div
       class="form-group mt-5"
       ng-class="{
-        'has-error': form.username.$dirty && form.username.$error.required
+        'has-error': form.email.$dirty && form.email.$error.required
       }"
     >
-      <!-- <label for="username">Username</label> -->
+      <!-- <label for="email">email</label> -->
       <input
         type="text"
-        name="username"
+        name="email"
         class="form-control"
-        placeholder="Username"
-        formControlName="username"
+        placeholder="email"
+        formControlName="email"
       />
       <hr class="hr-line" />
       <div
         class="input-group-append form__required"
-        *ngIf="registerForm.get('username').invalid"
+        *ngIf="
+          registerForm.get('email').invalid &&
+          registerForm.get('first_name').touched
+        "
       >
         <span class="colorInvalid">
-          <i>Username is required</i>
+          <i>email is required</i>
         </span>
       </div>
     </div>
@@ -76,16 +85,19 @@
     >
       <!-- <label for="password">Password</label> -->
       <input
-        type="email"
-        name="email"
+        type="password"
+        name="password"
         class="form-control"
-        placeholder="email"
-        formControlName="email"
+        placeholder="password"
+        formControlName="password"
       />
       <hr class="hr-line" />
       <div
         class="input-group-append form__required"
-        *ngIf="registerForm.get('email').invalid"
+        *ngIf="
+          registerForm.get('password').invalid &&
+          registerForm.get('password').touched
+        "
       >
         <span class="colorInvalid">
           <i>Email is required</i>
