@@ -50,8 +50,8 @@ Navigate to `http://localhost:4200/`.
   10. [x] Mensajes de error (email is required) de input email (Rgister Form) es mostrado sin haber sido tocado ni modificado
   11. [x] No hay un input field para ingresar el password del nuevo usuario
   12. [ ] El registro del usuario no persiste al recargar la App
-  13. [ ] No se muestran la imagenes de las naves en la pagina de listado de naves
-  14. [ ] Paginacion no realiza carga de las subsequentes paginas de la API
+  13. [x] No se muestran la imagenes de las naves en la pagina de listado de naves
+  14. [x] Paginacion no realiza carga de las subsequentes paginas de la API
   15. [ ] en el Menu -> Page One me dirige a una pagina vacia o sin implementar
   16. [ ] en el Menu -> Page Two me dirige a una pagina vacia o sin implementar
 
