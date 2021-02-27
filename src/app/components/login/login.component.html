@@ -1,23 +1,23 @@
 <div class="col-md-5 col-md-offset-5 container mt-5">
   <h2 class="text-center">Iniciar sesión</h2>
-  <p class="text-center">Introduzca su correo y contraseña para acceder</p>
+  <p class="text-center">
+    Introduzca su correo electrónico y contraseña para acceder
+  </p>
   <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="form">
     <div class="form-group mt-5" [ngClass]="{ 'has-error': loginForm.invalid }">
       <input
         type="text"
         class="form-control"
-        placeholder="Username"
-        formControlName="username"
+        placeholder="Correo electrónico"
+        formControlName="email"
       />
       <hr class="hr-line" />
       <div
         class="input-group-append form__required"
-        *ngIf="
-          loginForm.get('username').invalid && loginForm.get('username').touched
-        "
+        *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched"
       >
         <span class="colorInvalid">
-          <i>Username is required</i>
+          <i>Introuzca un correo electrónico valido</i>
         </span>
       </div>
     </div>
@@ -37,7 +37,7 @@
         "
       >
         <span class="colorInvalid">
-          <i>Password is required</i>
+          <i>Introduzca la contraseña</i>
         </span>
       </div>
     </div>
@@ -62,7 +62,7 @@
     </div>
     <div class="input-group-append" *ngIf="unregistered">
       <span class="colorInvalid">
-        <i>Unregistered user</i>
+        <i>Correo y contraseña incorrectos</i>
       </span>
     </div>
   </form>
