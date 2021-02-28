@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 // Components
-import { LoginComponent } from '@components/login/login.component';
-import { RegisterComponent } from '@components/register/register.component';
-import { AuthenticatedGuard } from '@guards/authenticated.guard';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AuthenticatedGuard } from './guards/authenticated.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'principal', pathMatch: 'full' },
@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'principal',
     loadChildren: () =>
-      import(`@components/principal/principal.module`).then(
+      import(`./components/principal/principal.module`).then(
         (m) => m.PrincipalModule
       ),
     canActivate: [AuthenticatedGuard],

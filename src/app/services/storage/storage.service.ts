@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { SessionToken } from '@models/session-token';
+import { SessionToken } from './../../models/session-token';
 import { Injectable } from '@angular/core';
 
 @Injectable({

@@ -1,4 +1,4 @@
-import { StorageService } from '@services/storage/storage.service';
+import { StorageService } from './../services/storage/storage.service';
 import { Injectable } from '@angular/core';
 import {
   CanActivate,
