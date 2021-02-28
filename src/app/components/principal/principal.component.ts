@@ -1,3 +1,4 @@
+import { StorageService } from './../../services/storage/storage.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./principal.component.scss'],
 })
 export class PrincipalComponent implements OnInit {
-  constructor() {}
+  constructor(private authSotrage: StorageService) {}
 
   ngOnInit(): void {}
+
+  logout() {
+    this.authSotrage.logout();
+  }
 }
