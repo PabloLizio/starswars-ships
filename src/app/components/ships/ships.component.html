@@ -4,7 +4,10 @@
     class="text-center"
   ></pagination-controls>
   <ships-details
-    *ngFor="let starship of dataList.results | paginate: config; let i = index"
-    [starship]="starship"
+    *ngFor="
+      let ship of starShipsList$ | async | paginate: config;
+      let i = index
+    "
+    [starship]="ship"
   ></ships-details>
 </div>

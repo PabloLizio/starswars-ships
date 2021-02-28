@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ShipsService } from 'src/app/services/ships/ships.service';
+
+import { StarshipState } from './../../models/starships.state';
+import { Starship } from 'src/app/models/starship';
+
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { loadNewPage } from 'src/app/store/starships.actions';
 
 @Component({
   selector: 'app-ships',
@@ -7,13 +13,15 @@ import { ShipsService } from 'src/app/services/ships/ships.service';
   styleUrls: ['./ships.component.scss'],
 })
 export class ShipsComponent implements OnInit {
-  public dataList: any = [];
+  starShipsList$: Observable<Starship[]>;
   config: any;
 
-  constructor(private shipsService: ShipsService) {}
+  constructor(private store: Store<StarshipState>) {
+    this.starShipsList$ = this.store.select('starships');
+  }
 
   ngOnInit(): void {
-    this.getShips(1);
+    this.store.dispatch(loadNewPage({ page: 1 }));
     this.config = {
       itemsPerPage: 10,
       currentPage: 1,
@@ -23,13 +31,6 @@ export class ShipsComponent implements OnInit {
 
   pageChanged(event) {
     this.config.currentPage = event;
-    this.getShips(event);
-  }
-
-  getShips(page: number) {
-    this.shipsService.getShips(page).subscribe((ships) => {
-      this.dataList = ships;
-      console.log('SHIPS -->', this.dataList.results);
-    });
+    this.store.dispatch(loadNewPage({ page: event }));
   }
 }
