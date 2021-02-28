@@ -38,7 +38,7 @@ Navigate to `http://localhost:4200/`.
 
 - Lista de errores encontrados
 
-  1. [ ] el usario puede loguearse con cualquier constraseña
+  1. [x] la contraseña ingresada es usada en el login request, el backend [https://reqres.in/] acepta cualquier contraseña pero solo acepta tanto como para ellogin como para el registro los siguientes mails: [george.bluth@reqres.in], [janet.weaver@reqres.in], [emma.wong@reqres.in], [eve.holt@reqres.in], [charles.morris@reqres.in], [tracey.ramos@reqres.in]
   2. [x] login no realiaza ningun llamado al servidor API para checkar el usario y constraseña
   3. [x] La sesion no persiste al recargar la App
   4. [x] El usuario puede acceder a cualquier pagina de la App sin haberse logueado
@@ -60,5 +60,5 @@ Navigate to `http://localhost:4200/`.
   2. [ ] Creacion de componente Ship Card Details
   3. [ ] Eliminar componentes y codigo no utilizados o vacios o sin imnplementar
   4. [x] Implementacion de Guards para bloquear acceso a usuarios no logueados
-  5. [ ] Implementacion de Interceptor para cachear las calls a la API y asi reducir las llamdas repetidas a la API
+  5. [x] Implementacion de Interceptor para cachear las calls a la API y asi reducir las llamdas repetidas a la API
   6. [ ] Restilizar la App con colores, fuentes y estilos teniendo en cuanta el publico objetivo (fans de StarWars/Ciencia Ficcion/Retro)
