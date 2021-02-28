@@ -39,9 +39,9 @@ Navigate to `http://localhost:4200/`.
 - Lista de errores encontrados
 
   1. [ ] el usario puede loguearse con cualquier constraseña
-  2. [ ] login no realiaza ningun llamado al servidor API para checkar el usario y constraseña
-  3. [ ] La sesion no persiste al recargar la App
-  4. [ ] El usuario puede acceder a cualquier pagina de la App sin haberse logueado
+  2. [x] login no realiaza ningun llamado al servidor API para checkar el usario y constraseña
+  3. [x] La sesion no persiste al recargar la App
+  4. [x] El usuario puede acceder a cualquier pagina de la App sin haberse logueado
   5. [x] Mensajes de error (username is required) de input Username (login Form) es mostrado sin haber sido tocado ni modificado
   6. [x] Mensajes de error (password is required) de input Password (login Form) es mostrado sin haber sido tocado ni modificado
   7. [x] Mensajes de error (FirstName is required) de input FirstName (Rgister Form) es mostrado sin haber sido tocado ni modificado
@@ -49,7 +49,7 @@ Navigate to `http://localhost:4200/`.
   9. [x] Mensajes de error (Username is required) de input Username (Rgister Form) es mostrado sin haber sido tocado ni modificado
   10. [x] Mensajes de error (email is required) de input email (Rgister Form) es mostrado sin haber sido tocado ni modificado
   11. [x] No hay un input field para ingresar el password del nuevo usuario
-  12. [ ] El registro del usuario no persiste al recargar la App
+  12. [x] El registro del usuario no persiste al recargar la App
   13. [x] No se muestran la imagenes de las naves en la pagina de listado de naves
   14. [x] Paginacion no realiza carga de las subsequentes paginas de la API
   15. [ ] en el Menu -> Page One me dirige a una pagina vacia o sin implementar
@@ -59,6 +59,6 @@ Navigate to `http://localhost:4200/`.
   1. [ ] Creacion de componente Ship Card
   2. [ ] Creacion de componente Ship Card Details
   3. [ ] Eliminar componentes y codigo no utilizados o vacios o sin imnplementar
-  4. [ ] Implementacion de Guards para bloquear acceso a usuarios no logueados
+  4. [x] Implementacion de Guards para bloquear acceso a usuarios no logueados
   5. [ ] Implementacion de Interceptor para cachear las calls a la API y asi reducir las llamdas repetidas a la API
   6. [ ] Restilizar la App con colores, fuentes y estilos teniendo en cuanta el publico objetivo (fans de StarWars/Ciencia Ficcion/Retro)
