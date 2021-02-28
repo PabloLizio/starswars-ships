@@ -1,4 +1,4 @@
-import { Starship } from './../../../models/starship';
+import { Starship } from '@models/starship';
 import { Component, OnInit, Input } from '@angular/core';
 declare var $: any;
 

@@ -1,4 +1,4 @@
-import { ShipsCacheInterceptor } from './../../services/ships/ships-cache.interceptor';
+import { ShipsCacheInterceptor } from '@services/ships/ships-cache.interceptor';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';

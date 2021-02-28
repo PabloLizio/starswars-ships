@@ -1,6 +1,6 @@
-import { StorageService } from './../../services/storage/storage.service';
-import { SessionToken } from './../../models/session-token';
-import { AuthenticationService } from './../../services/authentication/authentication.service';
+import { StorageService } from '@services/storage/storage.service';
+import { SessionToken } from '@models/session-token';
+import { AuthenticationService } from '@services/authentication/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';

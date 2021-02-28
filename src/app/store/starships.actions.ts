@@ -1,4 +1,4 @@
-import { Starship } from './../models/starship';
+import { Starship } from '@models/starship';
 import { createAction, props } from '@ngrx/store';
 
 export const loadNewPage = createAction(

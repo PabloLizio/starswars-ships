@@ -1,4 +1,4 @@
-import { Starship } from 'src/app/models/starship';
+import { Starship } from '@models/starship';
 import { loadNewPage, pageLoaded } from './starships.actions';
 import { Action, createReducer, on } from '@ngrx/store';
 
