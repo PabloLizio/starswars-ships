@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -12,6 +13,7 @@ describe('RegisterComponent', () => {
       TestBed.configureTestingModule({
         declarations: [RegisterComponent],
         imports: [
+          HttpClientModule,
           FormsModule,
           RouterTestingModule.withRoutes([]),
           ReactiveFormsModule,

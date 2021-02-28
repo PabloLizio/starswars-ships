@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ShipsService } from 'src/app/services/ships/ships.service';
 
@@ -6,6 +7,11 @@ import { ShipsComponent } from './ships.component';
 import { BehaviorSubject, of } from 'rxjs';
 import { PaginationControlsComponent } from 'ngx-pagination';
 import { Component, Input, Pipe, PipeTransform } from '@angular/core';
+
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { StarshipsEffects } from 'src/app/store/starships.effects';
+import { starshipsReducer } from 'src/app/store/starships.reducer';
 
 describe('ShipsComponent', () => {
   let component: ShipsComponent;
@@ -47,6 +53,11 @@ describe('ShipsComponent', () => {
           MockPipe,
         ],
         providers: [{ provide: ShipsService, useValue: serviceMock }],
+        imports: [
+          HttpClientModule,
+          StoreModule.forRoot({ starships: starshipsReducer }),
+          EffectsModule.forRoot([StarshipsEffects]),
+        ],
       }).compileComponents();
     })
   );
