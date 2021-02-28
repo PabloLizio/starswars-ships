@@ -3,6 +3,15 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "baseUrl": "./",
+    "paths":{
+      "@components/*":["src/app/components/*"],
+      "@app/*":["src/app/*"],
+      "@models/*":["src/app/models/*"],
+      "@store/*":["src/app/store/*"],
+      "@services/*":["src/app/services/*"],
+      "@modules/*":["src/app/modules/*"],
+      "@guards/*":["src/app/guards/*"],
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
