@@ -38,7 +38,7 @@ Navigate to `http://localhost:4200/`.
 
 - Lista de errores encontrados
 
-  1. [x] la contraseña ingresada es usada en el login request, el backend [https://reqres.in/] acepta cualquier contraseña pero solo acepta tanto como para ellogin como para el registro los siguientes mails: [george.bluth@reqres.in], [janet.weaver@reqres.in], [emma.wong@reqres.in], [eve.holt@reqres.in], [charles.morris@reqres.in], [tracey.ramos@reqres.in]
+  1. [x] la contraseña ingresada es usada en el login request, el backend [https://reqres.in/] acepta cualquier contraseña pero solo acepta para el login y para el registro los siguientes mails: [george.bluth@reqres.in], [janet.weaver@reqres.in], [emma.wong@reqres.in], [eve.holt@reqres.in], [charles.morris@reqres.in], [tracey.ramos@reqres.in]
   2. [x] login no realiaza ningun llamado al servidor API para checkar el usario y constraseña
   3. [x] La sesion no persiste al recargar la App
   4. [x] El usuario puede acceder a cualquier pagina de la App sin haberse logueado
