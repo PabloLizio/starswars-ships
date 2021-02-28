@@ -10,6 +10,12 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 
+//Store
+import { StarshipsEffects } from './store/starships.effects';
+import { StoreModule } from '@ngrx/store';
+import { starshipsReducer } from './store/starships.reducer';
+import { EffectsModule } from '@ngrx/effects';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +29,8 @@ import { PrincipalComponent } from './components/principal/principal.component';
     FormsModule,
     ReactiveFormsModule,
     PrincipalModule,
+    StoreModule.forRoot({ starships: starshipsReducer }),
+    EffectsModule.forRoot([StarshipsEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],
