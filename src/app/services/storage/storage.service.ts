@@ -28,7 +28,11 @@ export class StorageService {
   }
 
   isAuthenticated(): boolean {
-    return this.currentSession.token != null ? true : false;
+    return this.currentSession
+      ? this.currentSession.token
+        ? true
+        : false
+      : false;
   }
 
   logout(): void {
