@@ -21,7 +21,7 @@ export class ShipsDetailsComponent implements OnInit {
 
   getStarshipId(url: string) {
     //extraer el ship ID de la url ej: "http://swapi.dev/api/starships/15/" -> "15"
-    const shipId = url.replace(/(.+)([0-9]+)(.+)/g, '$2');
+    const shipId = url.replace(/(.+[/])(\d+)([/])/g, '$2');
     return `https://starwars-visualguide.com/assets/img/starships/${shipId}.jpg`;
   }
 
