@@ -16,7 +16,7 @@ export class AuthenticationService {
     return this.http.post(this.basePath + 'login', loginUser);
   }
 
-  sigup(newUser: User): Observable<any> {
+  signup(newUser: User): Observable<any> {
     return this.http.post(this.basePath + 'register', newUser);
   }
 }

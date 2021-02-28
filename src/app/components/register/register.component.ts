@@ -1,9 +1,9 @@
+import { AuthenticationService } from './../../services/authentication/authentication.service';
+import { StorageService } from './../../services/storage/storage.service';
+import { SessionToken } from './../../models/session-token';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-
-// JSON
-import usersList from 'src/assets/json/users.json';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +14,12 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   dataLoading: boolean = false;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private storage: StorageService,
+    private auth: AuthenticationService
+  ) {}
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -28,15 +33,27 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  registerUser() {
-    if (this.registerForm.invalid) {
-      return;
+  registerUser(): void {
+    this.dataLoading = true;
+
+    if (this.registerForm.valid) {
+      this.auth.signup(this.registerForm.value).subscribe(
+        (data) => this.registerSuccess(data),
+        (error) => this.registerFailed(error)
+      );
     }
-    // TODO : Falta integrar el servicio para registrar al usuario
-    // JSON simulando usuarios
-    var userLogin = this.registerForm.value;
-    usersList.push(userLogin);
-    console.log('User Register -->', usersList);
+  }
+
+  private registerSuccess(data: SessionToken) {
+    console.log('succes');
+    this.dataLoading = false;
+    this.storage.setCurrentSession(data);
     this.router.navigate(['/principal/ships']);
+  }
+
+  private registerFailed(error) {
+    this.dataLoading = false;
+    // this.loginError = true;
+    console.log(error);
   }
 }
