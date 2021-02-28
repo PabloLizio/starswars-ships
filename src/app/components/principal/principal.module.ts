@@ -1,6 +1,7 @@
+import { ShipsCacheInterceptor } from './../../services/ships/ships-cache.interceptor';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PrincipalComponentsRoutingModule } from './principal-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 // Components
@@ -21,6 +22,13 @@ import { ShipsDetailsComponent } from '../ships/ships-details/ships-details.comp
     PrincipalComponentsRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ShipsCacheInterceptor,
+      multi: true,
+    },
   ],
 })
 export class PrincipalModule {}
