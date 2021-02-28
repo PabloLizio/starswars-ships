@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,6 +16,7 @@ describe('LoginComponent', () => {
       TestBed.configureTestingModule({
         declarations: [LoginComponent],
         imports: [
+          HttpClientModule,
           FormsModule,
           RouterTestingModule.withRoutes([]),
           ReactiveFormsModule,
