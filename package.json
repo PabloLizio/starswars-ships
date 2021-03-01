@@ -23,6 +23,7 @@
     "@angular/router": "~11.0.9",
     "@ngrx/effects": "^11.0.1",
     "@ngrx/store": "^11.0.1",
+    "@ngrx/store-devtools": "^11.0.1",
     "@popperjs/core": "^2.4.4",
     "bootstrap": "^4.5.0",
     "jest-marbles": "^2.5.1",

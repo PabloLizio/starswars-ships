@@ -15,6 +15,7 @@ import { StarshipsEffects } from './store/starships.effects';
 import { StoreModule } from '@ngrx/store';
 import { starshipsReducer } from './store/starships.reducer';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { EffectsModule } from '@ngrx/effects';
     ReactiveFormsModule,
     PrincipalModule,
     StoreModule.forRoot({ starships: starshipsReducer }),
+    StoreDevtoolsModule.instrument({}),
     EffectsModule.forRoot([StarshipsEffects]),
   ],
   providers: [],
