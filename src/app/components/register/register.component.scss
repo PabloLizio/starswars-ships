@@ -1,6 +1,3 @@
-.form-control {
-  border: none !important;
-}
 .hr-line {
   margin-top: 0px;
 }
@@ -18,15 +15,17 @@
   margin-top: 30px;
   &__login {
     color: #fff;
-    background-color: #b99d6b;
-    border-color: #b99d6b;
+    background-color: #6510ab;
+    border-color: #010101;
+    box-shadow: #3a12a2 0px 0px 15px 0px;
     width: 30%;
   }
 
   &__register {
     color: #fff;
-    background-color: black;
-    border-color: black;
+    background-color: #ab1010;
+    border-color: #ff0000;
+    box-shadow: #a21212 0px 0px 15px 0px;
     width: 30%;
     margin-left: 30px;
   }
@@ -38,4 +37,17 @@
     line-height: 16px;
     font-size: 16px;
   }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+}
+
+.row {
+  justify-content: center;
+  align-content: center;
+  width: 80vw;
 }

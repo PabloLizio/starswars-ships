@@ -1,7 +1,3 @@
-.form-control {
-  border: none !important;
-}
-
 .hr-line {
   margin-top: 0px;
 }
@@ -24,8 +20,9 @@
   margin-top: 30px;
   &__login {
     color: #fff;
-    background-color: #b99d6b;
-    border-color: #b99d6b;
+    background-color: #6510ab;
+    border-color: #010101;
+    box-shadow: #3a12a2 0px 0px 15px 0px;
   }
 
   &__register {
@@ -54,6 +51,19 @@
     transform: none;
     font-weight: 400;
     font-size: 14px;
-    color: black;
+    color: white;
   }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+}
+
+.row {
+  justify-content: center;
+  align-content: center;
+  width: 80vw;
 }
