@@ -34,6 +34,10 @@ Navigate to `http://localhost:4200/`.
 
 # Notas del desarrollador:
 
+Para poder autentificarse deben utilizar cualquiera de los siguintes emails:
+[george.bluth@reqres.in], [janet.weaver@reqres.in], [emma.wong@reqres.in], [eve.holt@reqres.in], [charles.morris@reqres.in], [tracey.ramos@reqres.in]
+para la contraseña solo debe ser de 6 o + caracteres
+
 # Backlog Inicial:
 
 - Lista de errores encontrados
