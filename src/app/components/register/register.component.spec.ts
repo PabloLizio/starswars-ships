@@ -91,7 +91,7 @@ describe('RegisterComponent', () => {
     }, 10);
   });
 
-  it('should call the login method from the UserService', inject(
+  it('should call the signup method from the AuthenticationService', inject(
     [AuthenticationService],
     (mockUserService: AuthenticationService) => {
       spyOn(mockUserService, 'signup');

@@ -89,7 +89,7 @@ describe('LoginComponent', () => {
     }, 10);
   });
 
-  it('should call the login method from the UserService', inject(
+  it('should call the login method from the AuthenticationService', inject(
     [AuthenticationService],
     (mockUserService: AuthenticationService) => {
       spyOn(mockUserService, 'login');
