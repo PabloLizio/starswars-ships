@@ -6,7 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AuthenticatedGuard } from './guards/authenticated.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'principal', pathMatch: 'full' },
+  { path: '', redirectTo: 'principal/ships', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
       ),
     canActivate: [AuthenticatedGuard],
   },
-  { path: '**', redirectTo: 'principal', pathMatch: 'full' },
+  { path: '**', redirectTo: 'principal/ships', pathMatch: 'full' },
 ];
 
 @NgModule({
