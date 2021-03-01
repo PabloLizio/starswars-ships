@@ -124,6 +124,11 @@
             Cancelar
           </button>
         </div>
+        <div class="input-group-append" *ngIf="registerError$ | async">
+          <span class="colorInvalid">
+            <i>Correo electronico no válido</i>
+          </span>
+        </div>
       </form>
     </div>
   </div>
