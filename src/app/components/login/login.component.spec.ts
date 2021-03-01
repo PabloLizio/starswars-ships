@@ -2,20 +2,17 @@ import { AuthenticationService } from '../../services/authentication/authenticat
 import { HttpClientModule } from '@angular/common/http';
 import {
   ComponentFixture,
-  fakeAsync,
   inject,
   TestBed,
   waitForAsync,
 } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-
 import { LoginComponent } from './login.component';
 
 // List of test data for the Login Form with its expected validity result
 const dataTestLoginForm = [
-  //[ email, password, expected ]
+  // [ email, password, expected ]
   ['', '', false],
   ['aa', 'aaaaa', false],
   ['a@a', 'aa45aa', true],
@@ -29,7 +26,6 @@ const dataTestLoginForm = [
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-  let router: Router;
 
   beforeEach(
     waitForAsync(() => {
@@ -58,10 +54,10 @@ describe('LoginComponent', () => {
   });
 
   it('form validity expected to equal to the value especified on entries list for all the list', () => {
-    let emailInput = component.loginForm.controls['email'];
-    let passwordInput = component.loginForm.controls['password'];
+    const emailInput = component.loginForm.controls['email'];
+    const passwordInput = component.loginForm.controls['password'];
 
-    let result = dataTestLoginForm.reduce(
+    const result = dataTestLoginForm.reduce(
       (acc, [email, password, expected]) => {
         emailInput.setValue(email);
         passwordInput.setValue(password);
@@ -73,7 +69,7 @@ describe('LoginComponent', () => {
   });
 
   it('button should be disabled', () => {
-    let button = document.querySelector('.buttons__login');
+    const button = document.querySelector('.buttons__login');
     expect(button.hasAttribute('disabled')).toBeTruthy();
   });
 
@@ -82,7 +78,7 @@ describe('LoginComponent', () => {
     component.loginForm.controls['password'].setValue('123456');
 
     setTimeout(() => {
-      let buttonState = document
+      const buttonState = document
         .querySelector('.buttons__login')
         .hasAttribute('disabled');
       expect(buttonState).toBeFalsy();

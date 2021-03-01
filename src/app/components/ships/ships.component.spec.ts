@@ -17,7 +17,7 @@ describe('ShipsComponent', () => {
   let component: ShipsComponent;
   let fixture: ComponentFixture<ShipsComponent>;
   const serviceMock = {
-    getShips: function () {
+    getShips: () => {
       return new BehaviorSubject([]);
     },
   };
@@ -30,7 +30,7 @@ describe('ShipsComponent', () => {
   @Pipe({ name: 'paginate' })
   class MockPipe implements PipeTransform {
     transform(value: number): number {
-      //Do stuff here, if you want
+      // Do stuff here, if you want
       return value;
     }
   }

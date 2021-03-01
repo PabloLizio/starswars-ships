@@ -37,7 +37,7 @@ export class ShipsComponent implements OnInit {
     };
   }
 
-  pageChanged(event) {
+  pageChanged(event: number) {
     this.config.currentPage = event;
     this.store.dispatch(loadNewPage({ page: event }));
   }

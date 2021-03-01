@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./ships-details.component.scss'],
 })
 export class ShipsDetailsComponent implements OnInit {
-  @Output() onOpenDetails = new EventEmitter<Starship>();
+  @Output() openModal = new EventEmitter<Starship>();
   @Input() starship: Starship;
 
   constructor() {}
@@ -15,12 +15,12 @@ export class ShipsDetailsComponent implements OnInit {
   ngOnInit(): void {}
 
   getStarshipId(url: string) {
-    //extraer el ship ID de la url ej: "http://swapi.dev/api/starships/15/" -> "15"
+    // extraer el ship ID de la url ej: "http://swapi.dev/api/starships/15/" -> "15"
     const shipId = url.replace(/(.+[/])(\d+)([/])/g, '$2');
     return `https://starwars-visualguide.com/assets/img/starships/${shipId}.jpg`;
   }
 
   openDetails(selectedShip: Starship) {
-    this.onOpenDetails.emit(selectedShip);
+    this.openModal.emit(selectedShip);
   }
 }

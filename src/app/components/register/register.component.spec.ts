@@ -55,16 +55,16 @@ describe('RegisterComponent', () => {
   });
 
   it('form validity expected to equal to the value especified on entries list for all the list', () => {
-    let emailInput = component.registerForm.controls['email'];
-    let passwordInput = component.registerForm.controls['password'];
-    let first_nameInput = component.registerForm.controls['first_name'];
-    let last_nameInput = component.registerForm.controls['last_name'];
-    let result = dataTestregisterForm.reduce(
-      (acc, [first_name, last_name, email, password, expected]) => {
+    const emailInput = component.registerForm.controls['email'];
+    const passwordInput = component.registerForm.controls['password'];
+    const firstNameInput = component.registerForm.controls['first_name'];
+    const lastNameInput = component.registerForm.controls['last_name'];
+    const result = dataTestregisterForm.reduce(
+      (acc, [firstName, lastName, email, password, expected]) => {
         emailInput.setValue(email);
         passwordInput.setValue(password);
-        first_nameInput.setValue(first_name);
-        last_nameInput.setValue(last_name);
+        firstNameInput.setValue(firstName);
+        lastNameInput.setValue(lastName);
         return component.registerForm.valid !== expected ? false : acc;
       },
       true
@@ -73,7 +73,7 @@ describe('RegisterComponent', () => {
   });
 
   it('button should be disabled', () => {
-    let button = document.querySelector('.buttons__login');
+    const button = document.querySelector('.buttons__login');
     expect(button.hasAttribute('disabled')).toBeTruthy();
   });
 
@@ -84,7 +84,7 @@ describe('RegisterComponent', () => {
     component.registerForm.controls['last_name'].setValue('abc');
 
     setTimeout(() => {
-      let buttonState = document
+      const buttonState = document
         .querySelector('.buttons__login')
         .hasAttribute('disabled');
       expect(buttonState).toBeFalsy();

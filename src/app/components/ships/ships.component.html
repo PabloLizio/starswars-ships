@@ -3,7 +3,6 @@
     (pageChange)="pageChanged($event)"
     class="text-center"
   ></pagination-controls>
-  <!-- <div class="container"> -->
   <div class="row">
     <ships-details
       *ngFor="
@@ -11,10 +10,9 @@
         let i = index
       "
       [starship]="ship"
-      (onOpenDetails)="showModalDetails($event)"
+      (openModal)="showModalDetails($event)"
     ></ships-details>
   </div>
-  <!-- </div> -->
 </div>
 
 <!-- Modal Details-->

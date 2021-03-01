@@ -19,7 +19,7 @@ export class StorageService {
 
   loadSessionData(): SessionToken {
     const savedSession = localStorage.getItem('currentUser');
-    return savedSession ? <SessionToken>JSON.parse(savedSession) : null;
+    return savedSession ? JSON.parse(savedSession) : null;
   }
 
   removeCurrentSession(): void {

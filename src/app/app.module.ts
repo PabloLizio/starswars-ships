@@ -8,7 +8,7 @@ import { PrincipalModule } from './modules/principal/principal.module';
 import { AppComponent } from './app.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 
-//Store
+// Store
 import { StarshipsEffects } from './store/starships.effects';
 import { StoreModule } from '@ngrx/store';
 import { starshipsReducer } from './store/starships.reducer';
