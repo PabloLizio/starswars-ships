@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// Components
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
 import { AuthenticatedGuard } from './guards/authenticated.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'principal/ships', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  {
+    path: '',
+    loadChildren: () =>
+      import(`./modules/authentication/authentication.module`).then(
+        (m) => m.AuthenticationModule
+      ),
+  },
   {
     path: 'principal',
     loadChildren: () =>
-      import(`./components/principal/principal.module`).then(
+      import(`./modules/principal/principal.module`).then(
         (m) => m.PrincipalModule
       ),
     canActivate: [AuthenticatedGuard],
