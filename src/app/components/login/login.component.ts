@@ -1,9 +1,7 @@
-import { StorageService } from './../../services/storage/storage.service';
-import { SessionToken } from './../../models/session-token';
+import { Observable } from 'rxjs';
 import { AuthenticationService } from './../../services/authentication/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,17 +10,15 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  dataLoading: boolean = false;
-  loginError: boolean = false;
+  dataLoading$: Observable<boolean>;
+  loginError$: Observable<boolean>;
 
-  constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private auth: AuthenticationService,
-    private storage: StorageService
-  ) {}
+  constructor(private fb: FormBuilder, private auth: AuthenticationService) {}
 
   ngOnInit(): void {
+    this.dataLoading$ = this.auth.dataLoading.asObservable();
+    this.loginError$ = this.auth.loginError.asObservable();
+
     this.loginForm = this.fb.group({
       email: [
         '',
@@ -33,26 +29,8 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(): void {
-    this.dataLoading = true;
-
     if (this.loginForm.valid) {
-      this.auth.login(this.loginForm.value).subscribe(
-        (data) => this.loginSuccess(data),
-        (error) => this.loginFailed(error)
-      );
+      this.auth.login(this.loginForm.value);
     }
-  }
-
-  private loginSuccess(data: SessionToken) {
-    console.log('succes');
-    this.dataLoading = false;
-    this.storage.setCurrentSession(data);
-    this.router.navigate(['/principal/ships']);
-  }
-
-  private loginFailed(error) {
-    this.dataLoading = false;
-    this.loginError = true;
-    console.log(error);
   }
 }
