@@ -3,18 +3,18 @@
     (pageChange)="pageChanged($event)"
     class="text-center"
   ></pagination-controls>
-  <div class="container">
-    <div class="row">
-      <ships-details
-        *ngFor="
-          let ship of starShipsList$ | async | paginate: config;
-          let i = index
-        "
-        [starship]="ship"
-        (onOpenDetails)="showModalDetails($event)"
-      ></ships-details>
-    </div>
+  <!-- <div class="container"> -->
+  <div class="row">
+    <ships-details
+      *ngFor="
+        let ship of starShipsList$ | async | paginate: config;
+        let i = index
+      "
+      [starship]="ship"
+      (onOpenDetails)="showModalDetails($event)"
+    ></ships-details>
   </div>
+  <!-- </div> -->
 </div>
 
 <!-- Modal Details-->

@@ -12,6 +12,10 @@
   box-shadow: 0 4px 17px 4px rgb(145 42 185);
 }
 
+.panel-heading {
+  width: calc(150px + 20vw);
+}
+
 .panel-title {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
