@@ -52,13 +52,13 @@ Navigate to `http://localhost:4200/`.
   12. [x] El registro del usuario no persiste al recargar la App
   13. [x] No se muestran la imagenes de las naves en la pagina de listado de naves
   14. [x] Paginacion no realiza carga de las subsequentes paginas de la API
-  15. [ ] en el Menu -> Page One me dirige a una pagina vacia o sin implementar
-  16. [ ] en el Menu -> Page Two me dirige a una pagina vacia o sin implementar
+  15. [x] en el Menu -> Page One me dirige a una pagina vacia o sin implementar
+  16. [x] en el Menu -> Page Two me dirige a una pagina vacia o sin implementar
 
 - Mejoras a realizar (propuesta por el desarrollador) en adicion a la lista de Tasks
-  1. [ ] Creacion de componente Ship Card
-  2. [ ] Creacion de componente Ship Card Details
-  3. [ ] Eliminar componentes y codigo no utilizados o vacios o sin imnplementar
+  1. [x] Creacion de componente Ship Card
+  2. [x] Creacion de componente Ship Card Details
+  3. [x] Eliminar componentes y codigo no utilizados o vacios o sin imnplementar
   4. [x] Implementacion de Guards para bloquear acceso a usuarios no logueados
   5. [x] Implementacion de Interceptor para cachear las calls a la API y asi reducir las llamdas repetidas a la API
-  6. [ ] Restilizar la App con colores, fuentes y estilos teniendo en cuanta el publico objetivo (fans de StarWars/Ciencia Ficcion/Retro)
+  6. [x] Restilizar la App con colores, fuentes y estilos teniendo en cuanta el publico objetivo (fans de StarWars/Ciencia Ficcion/Retro)
