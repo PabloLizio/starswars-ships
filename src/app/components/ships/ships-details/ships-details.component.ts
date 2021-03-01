@@ -1,6 +1,5 @@
 import { Starship } from './../../../models/starship';
-import { Component, OnInit, Input } from '@angular/core';
-declare var $: any;
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ships-details',
@@ -8,12 +7,8 @@ declare var $: any;
   styleUrls: ['./ships-details.component.scss'],
 })
 export class ShipsDetailsComponent implements OnInit {
+  @Output() onOpenDetails = new EventEmitter<Starship>();
   @Input() starship: Starship;
-
-  // Modal
-  titleDetails: string = '';
-  modelDetails: string = '';
-  starship_class: string = '';
 
   constructor() {}
 
@@ -25,10 +20,7 @@ export class ShipsDetailsComponent implements OnInit {
     return `https://starwars-visualguide.com/assets/img/starships/${shipId}.jpg`;
   }
 
-  openDetails(details) {
-    $('#exampleModal').modal('show');
-    this.titleDetails = details.name;
-    this.modelDetails = details.model;
-    this.starship_class = details.starship_class;
+  openDetails(selectedShip: Starship) {
+    this.onOpenDetails.emit(selectedShip);
   }
 }

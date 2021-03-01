@@ -6,6 +6,7 @@ import { Starship } from 'src/app/models/starship';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { loadNewPage } from 'src/app/store/starships.actions';
+declare var $: any;
 
 @Component({
   selector: 'app-ships',
@@ -15,6 +16,13 @@ import { loadNewPage } from 'src/app/store/starships.actions';
 export class ShipsComponent implements OnInit {
   starShipsList$: Observable<Starship[]>;
   config: any;
+  // Modal
+  starShipModal: Starship = {
+    name: '',
+    model: '',
+    starship_class: '',
+    url: '',
+  };
 
   constructor(private store: Store<StarshipState>) {
     this.starShipsList$ = this.store.select('starships');
@@ -32,5 +40,10 @@ export class ShipsComponent implements OnInit {
   pageChanged(event) {
     this.config.currentPage = event;
     this.store.dispatch(loadNewPage({ page: event }));
+  }
+
+  showModalDetails(starship: Starship) {
+    this.starShipModal = starship;
+    $('#shipsDetailModal').modal('show');
   }
 }
