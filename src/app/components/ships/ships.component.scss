@@ -1,0 +1,27 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  justify-content: center !important;
+}
+
+.modal-content {
+  background-color: #0a0615;
+  box-shadow: #b400ff54 0px 0px 20px 4px;
+}
+hr {
+  border-top: 1px solid rgb(255 255 255 / 19%);
+}
+
+.modal-header {
+  background-color: #6510ab;
+  border-color: #010101;
+  box-shadow: #3a12a2 0px 0px 15px 0px;
+}
+
+.modal-footer > * {
+  background-color: #ab1010;
+  border-color: #ff0000;
+  box-shadow: #a21212 0px 0px 15px 0px;
+}

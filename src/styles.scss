@@ -1,4 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  color: #ffffff;
+  text-shadow: #140c67 0px 0px 20px;
+  background: rgb(7, 5, 27);
+  background: linear-gradient(
+    90deg,
+    rgba(7, 5, 27, 1) 0%,
+    rgba(0, 0, 0, 1) 51%,
+    rgba(23, 1, 31, 1) 100%
+  );
+  font-family: "Courier New", Courier, monospace !important;
+  //font-weight: 800;
+}
 .colorInvalid {
-  color: red;
+  color: #ff00009e;
+  margin-left: 15px;
+}
+
+.form-control {
+  border: 2px solid #3a12a2 !important;
+  box-shadow: #1e0858 0px 0px 17px 0px;
+  background-color: #ff000000 !important;
+  color: white !important;
+}
+
+.ngx-pagination a {
+  color: #ffffff !important;
+}
+.ngx-pagination .disabled {
+  color: #ffffff2b !important;
+}
+
+.ngx-pagination .current {
+  color: #ffffff !important;
+  background-color: #320d63 !important;
+  border-radius: 20px;
+}
+
+.ngx-pagination a:hover,
+.ngx-pagination button:hover {
+  background: #310d637d !important;
+  border-radius: 20px !important;
 }
