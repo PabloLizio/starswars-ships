@@ -1,6 +1,12 @@
+import { AuthenticationService } from '../../services/authentication/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  ComponentFixture,
+  inject,
+  TestBed,
+  waitForAsync,
+} from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RegisterComponent } from './register.component';
 
@@ -33,6 +39,7 @@ describe('RegisterComponent', () => {
           RouterTestingModule.withRoutes([]),
           ReactiveFormsModule,
         ],
+        providers: [{ provide: AuthenticationService }],
       }).compileComponents();
     })
   );
@@ -47,7 +54,7 @@ describe('RegisterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('form validity should be equal as asignated on the list for all the list', () => {
+  it('form validity expected to equal to the value especified on entries list for all the list', () => {
     let emailInput = component.registerForm.controls['email'];
     let passwordInput = component.registerForm.controls['password'];
     let first_nameInput = component.registerForm.controls['first_name'];
@@ -83,4 +90,17 @@ describe('RegisterComponent', () => {
       expect(buttonState).toBeFalsy();
     }, 10);
   });
+
+  it('should call the login method from the UserService', inject(
+    [AuthenticationService],
+    (mockUserService: AuthenticationService) => {
+      spyOn(mockUserService, 'signup');
+      component.registerForm.controls['email'].setValue('ab@cd');
+      component.registerForm.controls['password'].setValue('123456');
+      component.registerForm.controls['first_name'].setValue('abc');
+      component.registerForm.controls['last_name'].setValue('abc');
+      component.registerUser();
+      expect(mockUserService.signup).toHaveBeenCalled();
+    }
+  ));
 });

@@ -1,5 +1,12 @@
+import { AuthenticationService } from '../../services/authentication/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  inject,
+  TestBed,
+  waitForAsync,
+} from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -34,6 +41,7 @@ describe('LoginComponent', () => {
           RouterTestingModule.withRoutes([]),
           ReactiveFormsModule,
         ],
+        providers: [{ provide: AuthenticationService }],
       }).compileComponents();
     })
   );
@@ -49,7 +57,7 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('form validity should be equal as asignated on the list for all the list', () => {
+  it('form validity expected to equal to the value especified on entries list for all the list', () => {
     let emailInput = component.loginForm.controls['email'];
     let passwordInput = component.loginForm.controls['password'];
 
@@ -80,4 +88,15 @@ describe('LoginComponent', () => {
       expect(buttonState).toBeFalsy();
     }, 10);
   });
+
+  it('should call the login method from the UserService', inject(
+    [AuthenticationService],
+    (mockUserService: AuthenticationService) => {
+      spyOn(mockUserService, 'login');
+      component.loginForm.controls['email'].setValue('ab@cd');
+      component.loginForm.controls['password'].setValue('123456');
+      component.loginUser();
+      expect(mockUserService.login).toHaveBeenCalled();
+    }
+  ));
 });
