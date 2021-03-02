@@ -25,6 +25,11 @@ const dataTestregisterForm = [
   ['werwer', '', 'a@b', '123456', false],
 ];
 
+const EMAIL = 'email';
+const PASSWORD = 'password';
+const FIRSTNAME = 'first_name';
+const LASTNAME = 'last_name';
+
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
@@ -55,10 +60,10 @@ describe('RegisterComponent', () => {
   });
 
   it('form validity expected to equal to the value especified on entries list for all the list', () => {
-    const emailInput = component.registerForm.controls['email'];
-    const passwordInput = component.registerForm.controls['password'];
-    const firstNameInput = component.registerForm.controls['first_name'];
-    const lastNameInput = component.registerForm.controls['last_name'];
+    const emailInput = component.registerForm.controls[EMAIL];
+    const passwordInput = component.registerForm.controls[PASSWORD];
+    const firstNameInput = component.registerForm.controls[FIRSTNAME];
+    const lastNameInput = component.registerForm.controls[LASTNAME];
     const result = dataTestregisterForm.reduce(
       (acc, [firstName, lastName, email, password, expected]) => {
         emailInput.setValue(email);
@@ -78,10 +83,10 @@ describe('RegisterComponent', () => {
   });
 
   it('button should not be disabled', () => {
-    component.registerForm.controls['email'].setValue('ab@cd');
-    component.registerForm.controls['password'].setValue('123456');
-    component.registerForm.controls['first_name'].setValue('abc');
-    component.registerForm.controls['last_name'].setValue('abc');
+    component.registerForm.controls[EMAIL].setValue('ab@cd');
+    component.registerForm.controls[PASSWORD].setValue('123456');
+    component.registerForm.controls[FIRSTNAME].setValue('abc');
+    component.registerForm.controls[LASTNAME].setValue('abc');
 
     setTimeout(() => {
       const buttonState = document
@@ -95,10 +100,10 @@ describe('RegisterComponent', () => {
     [AuthenticationService],
     (mockUserService: AuthenticationService) => {
       spyOn(mockUserService, 'signup');
-      component.registerForm.controls['email'].setValue('ab@cd');
-      component.registerForm.controls['password'].setValue('123456');
-      component.registerForm.controls['first_name'].setValue('abc');
-      component.registerForm.controls['last_name'].setValue('abc');
+      component.registerForm.controls[EMAIL].setValue('ab@cd');
+      component.registerForm.controls[PASSWORD].setValue('123456');
+      component.registerForm.controls[FIRSTNAME].setValue('abc');
+      component.registerForm.controls[LASTNAME].setValue('abc');
       component.registerUser();
       expect(mockUserService.signup).toHaveBeenCalled();
     }

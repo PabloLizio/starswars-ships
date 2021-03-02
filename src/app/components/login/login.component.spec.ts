@@ -23,6 +23,9 @@ const dataTestLoginForm = [
   ['', '', false],
 ];
 
+const EMAIL = 'email';
+const PASSWORD = 'password';
+
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
@@ -54,8 +57,8 @@ describe('LoginComponent', () => {
   });
 
   it('form validity expected to equal to the value especified on entries list for all the list', () => {
-    const emailInput = component.loginForm.controls['email'];
-    const passwordInput = component.loginForm.controls['password'];
+    const emailInput = component.loginForm.controls[EMAIL];
+    const passwordInput = component.loginForm.controls[PASSWORD];
 
     const result = dataTestLoginForm.reduce(
       (acc, [email, password, expected]) => {
@@ -74,8 +77,8 @@ describe('LoginComponent', () => {
   });
 
   it('button should not be disabled', () => {
-    component.loginForm.controls['email'].setValue('ab@cd');
-    component.loginForm.controls['password'].setValue('123456');
+    component.loginForm.controls[EMAIL].setValue('ab@cd');
+    component.loginForm.controls[PASSWORD].setValue('123456');
 
     setTimeout(() => {
       const buttonState = document
@@ -89,8 +92,8 @@ describe('LoginComponent', () => {
     [AuthenticationService],
     (mockUserService: AuthenticationService) => {
       spyOn(mockUserService, 'login');
-      component.loginForm.controls['email'].setValue('ab@cd');
-      component.loginForm.controls['password'].setValue('123456');
+      component.loginForm.controls[EMAIL].setValue('ab@cd');
+      component.loginForm.controls[PASSWORD].setValue('123456');
       component.loginUser();
       expect(mockUserService.login).toHaveBeenCalled();
     }
